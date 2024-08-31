@@ -1,7 +1,7 @@
 *{
     font-size: 100%;
 }
-@media (max-width: 500px) { 
+@media (max-width: 700px) { 
     .mainDiv{
         /* background-color: white; */
         padding: 5%;
@@ -16,6 +16,8 @@
     .signupCard{
         /* background-color: red; */
         width: 100%;
+        height: auto;
+        padding: 20px 0;
     }
     .rightCont>div{
         padding: 0;
