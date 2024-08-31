@@ -1,0 +1,36 @@
+.cardsList{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    p{
+        span{
+            color: #6a6a6a;
+        }
+    }
+    &:last-child{
+        border: unset;
+    }
+    a{
+        &> div{
+
+            display: flex;
+            justify-content: space-between;
+            
+        }
+    }
+}
+
+.CardsOuter{
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    .cardsList{
+        &:last-child{
+            border-bottom: unset;
+        }
+        &:hover{
+            background-color: rgba(0,0,0,0.03);
+        }
+    }
+}
