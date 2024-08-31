@@ -110,7 +110,7 @@ console.log(response)
               <div
                 // type="submit"
                 onClick={handleConfirmForm}
-                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+                className="w-full bg-blue-500 text-center text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
               >
                 Login
               </div>
