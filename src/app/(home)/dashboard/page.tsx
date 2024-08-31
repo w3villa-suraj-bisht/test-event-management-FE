@@ -21,7 +21,7 @@ const ExamCard = () => {
       <Card className="w-full max-w-md p-2 m-4 bg-white rounded-lg shadow-md">
         <CardHeader className="flex flex-col items-center mb-4">
         <TbReport  size={54} className="text-blue-500"  />
-          <CardTitle className="text-2xl font-bold text-center">Examination Name</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">Gk</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col space-y-3">
@@ -40,7 +40,7 @@ const ExamCard = () => {
                 <p className="text-sm text-gray-600">
                   <strong>Total Duration:</strong>
                 </p>
-                <p className="text-sm text-gray-600 ml-6">90 minutes</p>
+                <p className="text-sm text-gray-600 ml-6">5 minutes</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -49,7 +49,7 @@ const ExamCard = () => {
                 <p className="text-sm text-gray-600">
                   <strong>Total Questions:</strong>
                 </p>
-                <p className="text-sm text-gray-600 ml-5">50</p>
+                <p className="text-sm text-gray-600 ml-5">10</p>
               </div>
             </div>
           </div>

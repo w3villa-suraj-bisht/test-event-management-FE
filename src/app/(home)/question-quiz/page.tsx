@@ -157,12 +157,16 @@ const QuestionQuiz: React.FC = () => {
 
     const payload = {
       answers: formattedAnswers,
-      questionPaperId:1
+      questionPaperId:"8788a28c-677b-11ef-90cb-027e2555139b"
     };
 
     const response = await score(payload);
     if(response.success){
-      toast.success(response.message)
+      toast.success(response.message);
+      router.push("/")
+    }else{
+      toast.success(response.message);
+      router.push("/")
     }
   
   };
