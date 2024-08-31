@@ -122,7 +122,7 @@ const SignIn = () => {
                 Login
               </div>
               <p className="text-center mt-6">
-                Don't have an account? <Link href="/signup" className="text-blue-500">Signup</Link>
+                Don&apos;t have an account? <Link href="/signup" className="text-blue-500">Signup</Link>
               </p>
             </form>
             </div>
