@@ -1,8 +1,9 @@
 "use client";
-import { userQuestion } from "@/utils/api/endPoints/userScore";
+import { score, userQuestion } from "@/utils/api/endPoints/userScore";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef, ChangeEvent } from "react";
+import { toast } from "react-toastify";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -13,7 +14,7 @@ const QuestionQuiz: React.FC = () => {
   const [pageIndex, setPageIndex] = useState(0);
   const [answered, setAnswered] = useState<any>({});
   const [switchCount, setSwitchCount] = useState(0);
-  const [questionId , setQuestion] = useState<any>(2);
+  const [questionId , setQuestion] = useState<any>(1);
 
   const data = {
     totalDuration: 5, // in minutes
@@ -80,21 +81,7 @@ const QuestionQuiz: React.FC = () => {
     passingMarks: 15,
   };
 
-  useEffect (()=>{
-    getUserQuestion();
-  },[])
 
-  const getUserQuestion = async()  =>{
-    try {
-      
-      const response = await userQuestion(questionId);
-      if(response.success){
-        console.log(response.data,'=========')
-      }
-    } catch (error) {
-      
-    }
-  }
 
   const getTimeRemaining = (e: Date) => {
     const total = Date.parse(e.toString()) - Date.parse(new Date().toString());
@@ -157,71 +144,77 @@ const QuestionQuiz: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer, router]);
 
-  const handleSubmitQuiz = () => {
+  const handleSubmitQuiz = async() => {
     const formattedAnswers = Object.entries(answered).map(
       ([questionId, selectedOption]) => ({
         questionId: parseInt(questionId),
         selectedOptionId:
           data.questions
-            .find((q) => q.text === selectedOption)
-            ?.options.find((o) => o.text === selectedOption)?.id ?? 0,
+            .find((q:any) => q.text === selectedOption)
+            ?.options.find((o:any) => o.text === selectedOption)?.id ?? 0,
       })
     );
 
     const payload = {
       answers: formattedAnswers,
+      questionPaperId:1
     };
-    console.log(payload, "aaa");
+
+    const response = await score(payload);
+    if(response.success){
+      toast.success(response.message)
+    }
+  
   };
 
-  // useEffect(() => {
-  //   let lastFocusTime = Date.now();
-  //   let isHidden = false;
+  useEffect(() => {
+    let lastFocusTime = Date.now();
+    let isHidden = false;
 
-  //   const checkAndIncrementSwitch = () => {
-  //     const now = Date.now();
-  //     if (now - lastFocusTime > 300) { 
-  //       setSwitchCount((prevCount) => {
-  //         const newCount = prevCount + 1;
-  //         console.log(`Switch count: ${newCount}`); 
-  //         if (newCount <= data.maxTabSwitchAttempts) {
-  //           alert(`Warning: You have switched tabs/windows ${newCount} time(s). Maximum allowed: ${data.maxTabSwitchAttempts}`);
-  //         }
-  //         if (newCount >= data.maxTabSwitchAttempts) {
-  //           handleSubmitQuiz();
-  //           alert("You have switched tabs/windows too many times. The quiz has been submitted automatically.");
-  //         }
-  //         return newCount;
-  //       });
-  //     }
-  //     lastFocusTime = now;
-  //   };
+    const checkAndIncrementSwitch = () => {
+      const now = Date.now();
+      if (now - lastFocusTime > 300) { 
+        setSwitchCount((prevCount) => {
+          const newCount = prevCount + 1;
+          console.log(`Switch count: ${newCount}`); 
+          if (newCount <= data.maxTabSwitchAttempts) {
+            alert(`Warning: You have switched tabs/windows ${newCount} time(s). Maximum allowed: ${data.maxTabSwitchAttempts}`);
+          }
+          if (newCount >= data.maxTabSwitchAttempts) {
+            handleSubmitQuiz();
+            alert("You have switched tabs/windows too many times. The quiz has been submitted automatically.");
+          }
+          return newCount;
+        });
+      }
+      lastFocusTime = now;
+    };
 
-  //   const handleVisibilityChange = () => {
-  //     if (document.hidden && !isHidden) {
-  //       isHidden = true;
-  //       checkAndIncrementSwitch();
-  //     } else if (!document.hidden && isHidden) {
-  //       isHidden = false;
-  //     }
-  //   };
+    const handleVisibilityChange = () => {
+      if (document.hidden && !isHidden) {
+        isHidden = true;
+        checkAndIncrementSwitch();
+      } else if (!document.hidden && isHidden) {
+        isHidden = false;
+      }
+    };
 
-  //   const handleFocus = () => {
-  //     if (!document.hidden && isHidden) {
-  //       isHidden = false;
-  //       checkAndIncrementSwitch();
-  //     }
-  //   };
+    const handleFocus = () => {
+      if (!document.hidden && isHidden) {
+        isHidden = false;
+        checkAndIncrementSwitch();
+      }
+    };
 
-  //   document.addEventListener('visibilitychange', handleVisibilityChange);
-  //   window.addEventListener('focus', handleFocus);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
 
-  //   return () => {
-  //     document.removeEventListener('visibilitychange', handleVisibilityChange);
-  //     window.removeEventListener('focus', handleFocus);
-  //   };
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [data.maxTabSwitchAttempts, handleSubmitQuiz]);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.maxTabSwitchAttempts, handleSubmitQuiz]);
 
 
 
@@ -247,7 +240,7 @@ const QuestionQuiz: React.FC = () => {
             </div>
             <br />
             <ul>
-              {quiz.options.map((option) => (
+              {quiz.options.map((option:any) => (
                 <li className="option" key={option.id}>
                   <input
                     type="radio"

@@ -21,7 +21,7 @@ const Landing = () => {
             </p>
             <div className="flex flex-col items-start space-x-3 space-y-3 sm:space-y-0 sm:items-center sm:flex-row">
               <Link
-                href="/question-quiz"
+                href="/singin"
                 target=""
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
