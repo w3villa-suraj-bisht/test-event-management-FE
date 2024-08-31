@@ -162,10 +162,11 @@ const QuestionQuiz: React.FC = () => {
 
     const response = await score(payload);
     if(response.success){
-      toast.success(response.message);
+      toast.success("Test submitted successfully.");
       router.push("/")
     }else{
       toast.success(response.message);
+      toast.success("Test submitted successfully.");
       router.push("/")
     }
   
