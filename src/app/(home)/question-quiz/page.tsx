@@ -122,6 +122,7 @@ const QuestionQuiz: React.FC = () => {
     return () => {
       if (Ref.current) clearInterval(Ref.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const addAnswer = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -135,6 +136,7 @@ const QuestionQuiz: React.FC = () => {
     if (timer == "0:00:00") {
       handleSubmitQuiz();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer, router]);
 
   const handleSubmitQuiz = () => {
