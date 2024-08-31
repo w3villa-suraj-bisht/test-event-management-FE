@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import ui_image from '../../../../public/img/bg_logo.png';
+import Link from "next/link";
 
 const SignIn = () => {
   const router = useRouter();

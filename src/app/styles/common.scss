@@ -340,3 +340,46 @@
         }
     }
 }
+
+.mt-4{
+    margin-top: 30px;
+}
+.wrapper{
+    width: 1024px;
+    margin: auto;
+}
+.quiz{
+    margin-top: 15vh;
+    border: 1px solid #4f46e5;
+    border-radius: 12px 12px 0 0;
+    background: rgba(79, 70, 229, 0.04);
+    .info{
+        background-color: #4f46e5;
+        padding: 10px 30px;
+        border-radius: 10px 10px 0 0;
+        color: white;
+    }
+    .as{
+        padding: 30px;
+        .option{
+            border: 2px solid #ccc;
+            padding: 10px;
+            background-color: #f1f1f1;
+            &:hover{
+                cursor: pointer;
+                background-color: white;
+            }
+        }
+        .active{
+            border-color: rgb(0, 186, 12);
+            color: rgb(0, 163, 11);
+            background: rgba(0, 186, 12, 0.1);
+            &:hover{
+                border-color: rgb(0, 186, 12);
+                color: rgb(0, 163, 11);
+                background: rgba(0, 186, 12, 0.1);
+                cursor: default;
+            }
+        }
+    }
+}
