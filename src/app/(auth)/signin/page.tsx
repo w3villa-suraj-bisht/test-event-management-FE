@@ -1,48 +1,88 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import ui_image from '../../../../public/img/bg_logo.png';
 
 const SignIn = () => {
-  
+  const router = useRouter();
+  const [activeButton, setActiveButton] = useState<'user' | 'admin' | null>(null);
 
+  const handleButtonClick = (buttonType: 'user' | 'admin') => {
+    setActiveButton(buttonType);
+    
+  };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-        <form autoComplete="off">
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-              Email:
-            </label>
-            <input
-              type="email"
-             
-              id="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
+    <div className="bg-gray-200 h-screen min-h-screen w-full flex items-center justify-center">
+      <div className="w-2/3 h-2/3 flex bg-white shadow-md">
+        <div className="w-1/2 h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
+          <img src="/img/signup.png" className="w-2/3" alt="Sign Up" />
+        </div>
+        <div className="flex items-center justify-center w-1/2">
+          <div className="bg-white w-2/3 rounded-lg p-8">
+            <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
+
+            {/* Buttons for User and Admin */}
+            <div className="flex flex-row items-center text-center justify-center mb-6">
+              <button
+                onClick={() => handleButtonClick('user')}
+                className={`py-2 px-4 transition duration-300 ease-in-out ${
+                  activeButton === 'user'
+                    ? 'bg-blue-500 text-white rounded-l-lg'
+                    : 'bg-gray-200 text-black-500 rounded-l-lg'
+                }`}
+              >
+                User
+              </button>
+              <button
+                onClick={() => handleButtonClick('admin')}
+                className={`py-2 px-4 transition duration-300 ease-in-out ${
+                  activeButton === 'admin'
+                    ? 'bg-blue-500 text-white rounded-r-lg'
+                    : 'bg-gray-200 text-black-500 rounded-r-lg'
+                }`}
+              >
+                Admin
+              </button>
+            </div>
+
+            <form>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                  Email:
+                </label>
+                <input
+                  type="email"
+                  autoComplete="off"
+                  id="email"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+                  Password:
+                </label>
+                <input
+                  type="password"
+                  autoComplete="off"
+                  id="password"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+              >
+                Login
+              </button>
+              <p className="text-center mt-6">
+                Don't have an account? <a href="/signup" className="text-blue-500">Signup</a>
+              </p>
+            </form>
           </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
-              Password:
-            </label>
-            <input
-              type="password"
-             
-              id="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
-          >
-            Login
-          </button>
-          <p className="text-center mt-2">Don't have an account <a href="/signup" className="text-blue-500">Signup</a></p>
-        </form>
+        </div>
       </div>
     </div>
   );
