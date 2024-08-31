@@ -4,10 +4,8 @@ import { useRouter } from "next/navigation";
 import apiClient from '../../../utils/api/apiClient';
 import { signUp } from "@/utils/api/endPoints/signup";
 import Link from "next/link";
-
-// api service
-
-
+// import "../../styles/signup.css"
+import "../../styles/signup.css"
 
 const SignIn = () => {
   const router = useRouter();
@@ -24,7 +22,10 @@ const SignIn = () => {
       
       const response = await signUp(data);
       console.log(response);
-      
+      localStorage.setItem("token",response.data.token);
+      if(response.success){
+        router.push('/dashboard');
+      }
       // router.push('/success');
     } catch (error) {
       console.error('Error during signup:', error);
@@ -32,15 +33,15 @@ const SignIn = () => {
   };
 
   return (
-    <div className="bg-gray-200 h-screen min-h-screen w-full flex items-center justify-center">
-      <div className="w-2/3 h-2/3 flex bg-white rounded-lg shadow-md">
-        <div className="w-1/2 h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
-          <img src="/img/bg_logo.png" className="w-2/3" alt="" />
+    <div className="bg-gray-200 mainDiv h-screen min-h-screen w-full flex items-center justify-center">
+      <div className="w-2/3 h-2/3 mainCard flex signupCard bg-white rounded-lg shadow-md">
+        <div className="w-1/2 leftLogo h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
+          <img src="/img/bg_logo.png" className=" signinLogo w-2/3" alt="" />
         </div>
-        <div className="flex items-center justify-center w-1/2">
+        <div className="flex rightCont items-center justify-center w-1/2">
           <div className="bg-white w-2/3 rounded-lg">
             <h2 className="text-2xl font-bold text-center mb-6">Signup</h2>
-            <form onSubmit={handleSignup}>
+            <form className="formSignup" onSubmit={handleSignup}>
               <div className="mb-2">
                 <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
                   Name:
@@ -91,7 +92,7 @@ const SignIn = () => {
                 Signup
               </button>
               <p className="text-center mt-2">
-                Have an account? <a href="/signin" className="text-blue-500">Signin</a>
+                Have an account? <Link href="/signin" className="text-blue-500">Signin</Link>
               </p>
             </form>
           </div>

@@ -1,0 +1,74 @@
+*{
+    font-size: 100%;
+}
+@media (max-width: 500px) { 
+    .mainDiv{
+        background-color: white;
+    }
+    .leftLogo{
+        display: none;
+    }
+    .mainCard{
+        width: 100%;
+        box-shadow: none;
+    }
+    .signupCard{
+        /* background-color: red; */
+        width: 100%;
+    }
+    .rightCont{
+        width: 100%;
+    }
+    .formSignup{
+        width: 100%;
+    }
+ }
+@media (max-width: 768px) { 
+    .leftLogo{
+        display: none;
+    }
+    .mainCard{
+        width: 100%;
+        justify-content: center;
+    }
+ }
+@media (max-width: 992px) { 
+    
+ }
+@media (min-width: 992px) { 
+    .signinLogo{
+        width: 75%;
+    }
+    body{
+        font-size: 90%;
+    }
+ }
+@media (min-width: 1200px) { 
+    body{
+        font-size: 90%;
+    }
+ }
+@media (min-width: 1400px) { 
+    .signinLogo{
+        width: 70%;
+    }
+    body{
+        /* font-size: 150%; */
+    }
+ }
+@media (min-width: 1700px) { 
+    .signinLogo{
+        width: 75%;
+    }
+    body{
+        font-size: 130%;
+    }
+ }
+@media (min-width: 2000px) { 
+    .signinLogo{
+        width: 80%;
+    }
+    body{
+        font-size: 200%;
+    }
+ }

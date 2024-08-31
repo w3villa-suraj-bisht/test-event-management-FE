@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import ui_image from '../../../../public/img/bg_logo.png';
 import Link from "next/link";
 import { signIn } from "@/utils/api/endPoints/auth";
+import "../../styles/signup.css"
 
 const SignIn = () => {
   const router = useRouter();
@@ -48,12 +49,12 @@ console.log(response)
   };
 
   return (
-    <div className="bg-gray-200 h-screen min-h-screen w-full flex items-center justify-center">
-      <div className="w-2/3 h-2/3 flex bg-white shadow-md">
-        <div className="w-1/2 h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
+    <div className="bg-gray-200 mainDiv h-screen min-h-screen w-full flex items-center justify-center">
+      <div className="w-2/3 h-2/3 mainCard flex bg-white shadow-md">
+        <div className="w-1/2 leftLogo h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
           <img src="/img/signup.png" className="w-2/3" alt="Sign Up" />
         </div>
-        <div className="flex items-center justify-center w-1/2">
+        <div className="flex rightCont items-center justify-center w-1/2">
           <div className="bg-white w-2/3 rounded-lg p-8">
             <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
 
