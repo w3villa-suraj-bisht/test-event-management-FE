@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=M+PLUS+Rounded+1c&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Outfit", sans-serif;
+  }
+
+select, input, button{
+    &:focus, &:hover{
+        box-shadow: unset !important;
+        outline: unset !important;
+    }
+
+}
+.dialog-footer {
+    justify-content: space-between !important;
+}
