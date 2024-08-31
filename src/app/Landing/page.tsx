@@ -1,11 +1,15 @@
 "use client"
 import Image from "next/image";
 import Container from "./container";
+import { FiHelpCircle } from "react-icons/fi";
 import heroImg from "../../../public/img/hero.png";
+import Navbar from "./Navbar";
+import Link from "next/link";
 
 const Landing = () => {
   return (
     <>
+      <Navbar />
       <Container className="flex flex-wrap">
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
@@ -16,23 +20,23 @@ const Landing = () => {
             Manage and streamline all your test events effortlessly with our user-friendly, open-source platform. Ideal for education and corporate needs, featuring powerful scheduling and result analysis tools.
             </p>
             <div className="flex flex-col items-start space-x-3 space-y-3 sm:space-y-0 sm:items-center sm:flex-row">
-              <a
-                href="https://github.com/web3templates"
-                target="_blank"
+              <Link
+                href=""
+                target=""
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md"
               >
                 Start your quiz
-              </a>
-              <a
-                href="http://"
-                target="_blank"
+              </Link>
+              <Link
+                href=""
+                target=""
                 rel="noopener"
                 className="flex items-center space-x-2 text-gray-500 dark:text-gray-400"
               >
-                
+                <FiHelpCircle />
                 <span>Contact us</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

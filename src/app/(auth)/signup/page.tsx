@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 // api service
 
@@ -67,7 +68,7 @@ const SignIn = () => {
           >
             Login
           </button>
-          <p className="text-center mt-2">Have a account? <a href="/sigin" className="text-blue-500">Signin</a></p>
+          <p className="text-center mt-2">Have a account? <Link href="/sigin" className="text-blue-500">Signin</Link></p>
         </form>
       </div>
     </div>  );

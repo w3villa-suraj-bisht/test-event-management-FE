@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const SignIn = () => {
   
@@ -41,7 +42,7 @@ const SignIn = () => {
           >
             Login
           </button>
-          <p className="text-center mt-2">Don't have an account <a href="/signup" className="text-blue-500">Signup</a></p>
+          <p className="text-center mt-2">Don't have an account <Link href="/signup" className="text-blue-500">Signup</Link></p>
         </form>
       </div>
     </div>
