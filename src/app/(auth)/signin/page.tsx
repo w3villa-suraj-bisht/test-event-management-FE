@@ -1,12 +1,46 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import ui_image from '../../../../public/img/bg_logo.png';
 import Link from "next/link";
+import { signIn } from "@/utils/api/endPoints/auth";
 
 const SignIn = () => {
   const router = useRouter();
-  const [activeButton, setActiveButton] = useState<'user' | 'admin' | null>(null);
+  const [activeButton, setActiveButton] = useState<'user' | 'admin'>('user');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleConfirmForm = async () => {
+    const requestBody = {
+      email: formData.email,
+      password: formData.password,
+      type: activeButton 
+      
+    };
+
+    try {
+      const response = await signIn(requestBody);
+console.log(response)
+      
+    } catch (error) {
+      if (error instanceof Error) {
+        if ((error as any).response) {
+          console.error("Failed to Login:", (error as any).response.data);
+        } else {
+          console.error("Failed to Login:", error.message);
+        }
+      } else {
+        console.error("An unexpected error occurred:", error);
+      }
+    }
+  };
 
   const handleButtonClick = (buttonType: 'user' | 'admin') => {
     setActiveButton(buttonType);
@@ -47,7 +81,7 @@ const SignIn = () => {
               </button>
             </div>
 
-            <form>
+            <form onSubmit={handleConfirmForm}>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
                   Email:
@@ -56,6 +90,7 @@ const SignIn = () => {
                   type="email"
                   autoComplete="off"
                   id="email"
+                  onChange={handleInputChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
@@ -68,16 +103,18 @@ const SignIn = () => {
                   type="password"
                   autoComplete="off"
                   id="password"
+                  onChange={handleInputChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+              <div
+                // type="submit"
+                onClick={handleConfirmForm}
+                className="w-full bg-blue-500 text-center text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
               >
                 Login
-              </button>
+              </div>
               <p className="text-center mt-6">
                 Don't have an account? <a href="/signup" className="text-blue-500">Signup</a>
               </p>
