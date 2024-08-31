@@ -25,6 +25,7 @@ const CreateCategory = () => {
                             <TableHeader>
                                 <TableRow>
                                     <TableHead>name</TableHead>
+                                    <TableHead className="w-[150px] text-center">Length</TableHead>
                                     <TableHead className="w-[150px] text-center">Action</TableHead>
                                 </TableRow>
                             </TableHeader>
