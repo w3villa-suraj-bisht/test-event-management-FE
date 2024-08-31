@@ -48,6 +48,54 @@ const ReviewResult = () => {
                                         </div>
                                     </TableCell>
                                 </TableRow>
+                                <TableRow >
+                                    <TableCell>brijesh</TableCell>
+                                    <TableCell>brijesh@gmail.com</TableCell>
+                                    <TableCell>Pass</TableCell>
+                                    <TableCell className="text-center">10</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow >
+                                    <TableCell>username</TableCell>
+                                    <TableCell>username@t.com</TableCell>
+                                    <TableCell>Pass</TableCell>
+                                    <TableCell className="text-center">6</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow >
+                                    <TableCell>jonn</TableCell>
+                                    <TableCell>jonn@jon.com</TableCell>
+                                    <TableCell>fail</TableCell>
+                                    <TableCell className="text-center">4</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
                             </TableBody>
                         </Table>
                     </div>

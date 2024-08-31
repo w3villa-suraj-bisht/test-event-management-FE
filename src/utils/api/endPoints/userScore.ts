@@ -18,4 +18,13 @@ export const score = async (data: Partial<any>): Promise<any> => {
       throw error;
     }
   };
+
+  export const getUserDetails = async (questionPaperId: Partial<any>): Promise<any> => {
+    try {
+      const response = await apiClient.get(`users/attemptedPapers`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
   
