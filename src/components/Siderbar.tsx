@@ -15,7 +15,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { IconType } from "react-icons/lib";
-
+import logo from '../../public/logo.png'
 import Image from "next/image";
 import { PiNewspaperLight } from "react-icons/pi";
 
@@ -51,8 +51,8 @@ const Sidebar = ({sidebarOpen, setSidebarOpen}: any) => {
     <div>
     <div onClick={()=> setSidebarOpen(false)} className={`transLayers ${sidebarOpen ? 'transLayer' : ''}`}></div>
     <section className={`sidebar-menu sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-slate-100  text-black max-sm:hidden lg:w-[264px]  ${sidebarOpen ? 'sidebar-open' : ''}` } >
-      <div className="flex justify-center pl-6 pr-6">
-        <Image src={""} alt="logo" className="w-1/2" />
+      <div className="flex justify-center pl-6 pr-6 mt-5">
+        <Image src={logo} alt="logo" style={{width: '90px'}} />
       </div>
 
       <div className="sidebar flex flex-1 flex-col sidebarHeightManage">
