@@ -9,10 +9,10 @@ module.exports = {
         staging : {
           "user" : "w3villa",
           "host" : "4.186.57.96",
-          "ref"  : "origin/base-setup",
+          "ref"  : "origin/show-and-handle-question-quiz",
           "repo" : "git@github.com:w3villa-suraj-bisht/test-event-management-FE.git",
           "path" : "/home/w3villa/test-event-management-FE",
-          'post-deploy': 'cd /home/w3villa/test-event-management-FE/current && npm i && pm2 reload ecosystem.config.js --env staging   ', 
+          'post-deploy': 'cd /home/w3villa/test-event-management-FE/current && rm -rf .next/ && npm i && npm run build && pm2 reload ecosystem.config.js --env staging', 
           env: {
             NODE_ENV: 'staging', 
           },
