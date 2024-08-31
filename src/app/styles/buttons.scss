@@ -1,0 +1,181 @@
+.btn_def{
+    background-color: #0f172a;
+    color: white;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: calc(0.5rem - 2px);
+    font-size: 14px;
+    height: 40px;
+}
+.btnCancel{
+    background-color: #f1f1f1;
+    color: black;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
+    &:hover{
+        background-color: #e6e6e6;
+    }
+
+}
+.delete-icon {
+    &:hover {
+        svg {
+            color: #d83a3a;
+        }
+    }
+}
+.btnReject{
+    background-color: white;
+    color: #ba0000;
+    border: 1px solid #fed5d5;
+    background-color:  #fed5d5;
+    padding: 5px 20px;
+    height: 30px;
+    &:hover{
+        background-color: #ba0000 !important;
+        border-color: #ba0000 !important;
+        color: white !important;
+
+    }
+}
+.btnAccept{
+    background-color: white;
+    color: #00a811;
+    border: 1px solid #e0ffe3;
+    background-color: #e0ffe3;
+    padding: 5px 20px;
+    height: 30px;
+    &:hover{
+        background-color: #00a811 !important;
+        border-color: #00a811 !important;
+        color: white !important;
+    }
+}
+.link-btnWhite{
+    color: black;
+    background-color: white;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 8px;
+    &:hover{
+        background-color: rgba(255,255,255,0.9);
+    }
+}
+.btnLink_edit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    background-color: #cce5ff;
+    color: #004085;
+    transition: .3s;
+    &:hover{
+        color: white;
+        background-color: #004085;
+        transition: .3s;
+        }
+}
+.btnLink_success{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    background-color: #dbfff1;
+    color: #00a94f;
+    transition: .3s;
+    &:hover{
+        color: white;
+        background-color: #00a94f;
+        transition: .3s;
+    }
+}
+.btnLink_delete{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(255, 227, 227);
+            color: rgb(255, 79, 79);
+            transition: .3s;
+            &:hover{
+                color: white;
+                background-color: rgb(255, 79, 79);
+                transition: .3s;
+    }
+}
+.btnLink_invite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(224, 244, 255);
+    color: rgb(0, 166, 255);
+    transition: .3s;
+    &:hover{
+        color: white;
+        background-color: rgb(0, 166, 255);;
+        transition: .3s;
+    }
+}
+.active-badge{
+    background-color: rgb(200, 253, 200);
+    padding: 2px 10px;
+    border-radius: 40px;
+    color: rgb(0, 150, 0);
+    border: 1px solid rgb(0, 150, 0);
+    font-size: 12px;
+
+
+}
+.inactive-badge{
+    background-color: rgb(255, 244, 220);
+    padding: 2px 10px;
+    border-radius: 40px;
+    color: rgb(255, 174, 0);
+    border: 1px solid rgb(255, 174, 0);
+    font-size: 12px;
+}
+.btnLink_common{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(222, 222, 222);
+    color: rgb(85, 85, 85);
+    transition: .3s;
+    &:hover{
+        color: white;
+        background-color: rgb(85, 85, 85);
+        transition: .3s;
+    }
+}
+
+.btnLight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: rgb(222, 222, 222);
+    color: rgb(85, 85, 85);
+    transition: .3s;
+    padding: 5px 10px;
+    padding-right: 15px;
+    
+    &:hover{
+        color: white;
+        background-color: rgb(85, 85, 85);
+        transition: .3s;
+        cursor: pointer;
+    }
+}
