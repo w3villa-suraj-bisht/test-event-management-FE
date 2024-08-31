@@ -25,16 +25,16 @@ const ReviewResult = () => {
                             <TableHeader>
                                 <TableRow>
                                     <TableHead>name</TableHead>
-                                    <TableHead>id</TableHead>
-                                    <TableHead className="w-[150px] text-center">Length</TableHead>
+                                    <TableHead>email</TableHead>
+                                    <TableHead className="w-[150px] text-center">Score</TableHead>
                                     <TableHead className="w-[150px] text-center">Action</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 <TableRow >
-                                    <TableCell>user jinda hai</TableCell>
-                                    <TableCell>mil jayega</TableCell>
-                                    <TableCell className="text-center">20 Min</TableCell>
+                                    <TableCell>Arvind</TableCell>
+                                    <TableCell>arvind@t.com</TableCell>
+                                    <TableCell className="text-center">7</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
                                             <Link className="btnLink_edit" href={""}  >
