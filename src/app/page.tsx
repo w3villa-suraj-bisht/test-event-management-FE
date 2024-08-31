@@ -1,10 +1,13 @@
-import SignIn from "@/app/(auth)/signin/page"
-export default function Home() {
+"use client"
+import React from 'react';
+import Landing from './Landing/page';
+
+const page = () => {
   return (
-   <main>
-    <>
-      <SignIn />
-    </>
-   </main>
-  );
+    <div>
+      <Landing />
+    </div>
+  )
 }
+
+export default page;
