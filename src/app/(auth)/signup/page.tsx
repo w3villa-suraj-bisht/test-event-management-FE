@@ -1,35 +1,49 @@
 "use client";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import ui_image from '../../../../public/img/bg_logo.png';
-
-// api service
-
+import apiClient from '../../../utils/api/apiClient';
+import { signUp } from "@/utils/api/endPoints/signup";
 
 const SignIn = () => {
   const router = useRouter();
-  const [name, setname] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(null);
 
+  const handleSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const data = { name, email, password };
+      console.log(data);
+      
+      const response = await signUp(data);
+      console.log(response);
+      
+      // router.push('/success');
+    } catch (error) {
+      console.error('Error during signup:', error);
+    }
+  };
 
-  useEffect(() => {
-
-  }, [])
   return (
-    <div className="bg-gray-200 h-screen min-h-screen w-full flex items-center justify-center ">
+    <div className="bg-gray-200 h-screen min-h-screen w-full flex items-center justify-center">
       <div className="w-2/3 h-2/3 flex bg-white rounded-lg shadow-md">
-        <div className="w-1/2 h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center"><img src="/img/bg_logo.png" className="w-2/3" alt="" /></div>
+        <div className="w-1/2 h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
+          <img src="/img/bg_logo.png" className="w-2/3" alt="" />
+        </div>
         <div className="flex items-center justify-center w-1/2">
-          <div className="  bg-white w-2/3 rounded-lg ">
+          <div className="bg-white w-2/3 rounded-lg">
             <h2 className="text-2xl font-bold text-center mb-6">Signup</h2>
-            <form>
+            <form onSubmit={handleSignup}>
               <div className="mb-2">
-                <label htmlFor="text" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
                   Name:
                 </label>
                 <input
                   type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   autoComplete="off"
                   id="name"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -42,6 +56,8 @@ const SignIn = () => {
                 </label>
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   autoComplete="off"
                   id="email"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -54,25 +70,30 @@ const SignIn = () => {
                 </label>
                 <input
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   autoComplete="off"
                   id="password"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
+              {error && <p className="text-red-500 text-center mb-4">{error}</p>}
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+                className="w-full bg-blue-500 text-white py-2 rounded-lg flex justify-center hover:bg-blue-600 transition duration-300 ease-in-out"
               >
-                Login
+                Signup
               </button>
-              <p className="text-center mt-2">Have a account? <a href="/signin" className="text-blue-500">Signin</a></p>
+              <p className="text-center mt-2">
+                Have an account? <a href="/signin" className="text-blue-500">Signin</a>
+              </p>
             </form>
           </div>
         </div>
-
       </div>
-    </div>);
+    </div>
+  );
 };
 
 export default SignIn;
