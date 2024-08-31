@@ -34,7 +34,67 @@ const QuestionBank = () => {
                                 <TableRow >
                                     <TableCell>What is the largest mammal in the world?</TableCell>
                                     <TableCell>GK</TableCell>
-                                    <TableCell className="text-center">20 Min</TableCell>
+                                    <TableCell className="text-center">5 Min</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow >
+                                    <TableCell>Who painted the Mona Lisa??</TableCell>
+                                    <TableCell>GK</TableCell>
+                                    <TableCell className="text-center">5 Min</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow >
+                                    <TableCell>What is the chemical symbol for gold?</TableCell>
+                                    <TableCell>GK</TableCell>
+                                    <TableCell className="text-center">5 Min</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow >
+                                    <TableCell>What is the largest mammal in the world?</TableCell>
+                                    <TableCell>GK</TableCell>
+                                    <TableCell className="text-center">5 Min</TableCell>
+                                    <TableCell className="text-center">
+                                        <div className="flex items-center justify-center gap-1">
+                                            <Link className="btnLink_edit" href={""}  >
+                                                <TiEdit />
+                                            </Link>
+                                            <Link className="btnLink_delete" href={""} >
+                                                <MdOutlineDeleteOutline />
+                                            </Link>
+                                        </div>
+                                    </TableCell>
+                                </TableRow>
+                                <TableRow >
+                                    <TableCell>Which planet is known as the Red Planet?</TableCell>
+                                    <TableCell>GK</TableCell>
+                                    <TableCell className="text-center">5 Min</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
                                             <Link className="btnLink_edit" href={""}  >
