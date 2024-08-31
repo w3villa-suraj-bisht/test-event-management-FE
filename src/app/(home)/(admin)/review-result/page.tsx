@@ -26,6 +26,7 @@ const ReviewResult = () => {
                                 <TableRow>
                                     <TableHead>name</TableHead>
                                     <TableHead>email</TableHead>
+                                    <TableHead>Status</TableHead>
                                     <TableHead className="w-[150px] text-center">Score</TableHead>
                                     <TableHead className="w-[150px] text-center">Action</TableHead>
                                 </TableRow>
@@ -34,6 +35,7 @@ const ReviewResult = () => {
                                 <TableRow >
                                     <TableCell>Arvind</TableCell>
                                     <TableCell>arvind@t.com</TableCell>
+                                    <TableCell>Pass</TableCell>
                                     <TableCell className="text-center">7</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
