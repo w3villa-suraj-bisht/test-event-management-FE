@@ -24,8 +24,8 @@ const ReviewResult = () => {
                         <Table className="tableStyle">
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>name</TableHead>
-                                    <TableHead>email</TableHead>
+                                    <TableHead>Name</TableHead>
+                                    <TableHead>Email</TableHead>
                                     <TableHead>Status</TableHead>
                                     <TableHead className="w-[150px] text-center">Score</TableHead>
                                     <TableHead className="w-[150px] text-center">Action</TableHead>
@@ -36,7 +36,7 @@ const ReviewResult = () => {
                                     <TableCell>Arvind</TableCell>
                                     <TableCell>arvind@t.com</TableCell>
                                     <TableCell>Pass</TableCell>
-                                    <TableCell className="text-center">7</TableCell>
+                                    <TableCell className="text-center">7/10</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
                                             <Link className="btnLink_edit" href={""}  >
@@ -52,7 +52,7 @@ const ReviewResult = () => {
                                     <TableCell>brijesh</TableCell>
                                     <TableCell>brijesh@gmail.com</TableCell>
                                     <TableCell>Pass</TableCell>
-                                    <TableCell className="text-center">10</TableCell>
+                                    <TableCell className="text-center">10/15</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
                                             <Link className="btnLink_edit" href={""}  >
@@ -68,7 +68,7 @@ const ReviewResult = () => {
                                     <TableCell>username</TableCell>
                                     <TableCell>username@t.com</TableCell>
                                     <TableCell>Pass</TableCell>
-                                    <TableCell className="text-center">6</TableCell>
+                                    <TableCell className="text-center">6/10</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
                                             <Link className="btnLink_edit" href={""}  >
@@ -83,8 +83,8 @@ const ReviewResult = () => {
                                 <TableRow >
                                     <TableCell>jonn</TableCell>
                                     <TableCell>jonn@jon.com</TableCell>
-                                    <TableCell>fail</TableCell>
-                                    <TableCell className="text-center">4</TableCell>
+                                    <TableCell>Fail</TableCell>
+                                    <TableCell className="text-center">4/20</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
                                             <Link className="btnLink_edit" href={""}  >
