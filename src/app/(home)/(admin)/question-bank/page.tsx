@@ -24,16 +24,16 @@ const QuestionBank = () => {
                         <Table className="tableStyle">
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>name</TableHead>
-                                    <TableHead>id</TableHead>
+                                    <TableHead>question</TableHead>
+                                    <TableHead>category</TableHead>
                                     <TableHead className="w-[150px] text-center">Length</TableHead>
                                     <TableHead className="w-[150px] text-center">Action</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 <TableRow >
-                                    <TableCell>user jinda hai</TableCell>
-                                    <TableCell>mil jayega</TableCell>
+                                    <TableCell>What is the largest mammal in the world?</TableCell>
+                                    <TableCell>GK</TableCell>
                                     <TableCell className="text-center">20 Min</TableCell>
                                     <TableCell className="text-center">
                                         <div className="flex items-center justify-center gap-1">
