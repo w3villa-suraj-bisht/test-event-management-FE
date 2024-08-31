@@ -52,7 +52,7 @@ console.log(response)
     <div className="bg-gray-200 mainDiv h-screen min-h-screen w-full flex items-center justify-center">
       <div className="w-2/3 h-2/3 mainCard flex bg-white shadow-md">
         <div className="w-1/2 leftLogo h-full bg-gradient-to-r from-blue-600 to-blue-500 flex justify-center items-center">
-          <img src="/img/signup.png" className="w-2/3" alt="Sign Up" />
+          <img src="/img/signup.png" className="w-2/3 signinLogo" alt="Sign Up" />
         </div>
         <div className="flex rightCont items-center justify-center w-1/2">
           <div className="bg-white w-2/3 rounded-lg p-8">

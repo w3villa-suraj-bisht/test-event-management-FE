@@ -3,18 +3,22 @@
 }
 @media (max-width: 500px) { 
     .mainDiv{
-        background-color: white;
+        /* background-color: white; */
+        padding: 5%;
     }
     .leftLogo{
         display: none;
     }
     .mainCard{
         width: 100%;
-        box-shadow: none;
+        /* box-shadow: none; */
     }
     .signupCard{
         /* background-color: red; */
         width: 100%;
+    }
+    .rightCont>div{
+        padding: 0;
     }
     .rightCont{
         width: 100%;
@@ -30,6 +34,9 @@
     .mainCard{
         width: 100%;
         justify-content: center;
+    }
+    .formSignup{
+        width: 100%;
     }
  }
 @media (max-width: 992px) { 

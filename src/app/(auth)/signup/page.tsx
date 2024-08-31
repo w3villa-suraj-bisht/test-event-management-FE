@@ -23,6 +23,8 @@ const SignIn = () => {
       const response = await signUp(data);
       console.log(response);
       localStorage.setItem("token",response.data.token);
+      console.log(response.success);
+      
       if(response.success){
         router.push('/dashboard');
       }
