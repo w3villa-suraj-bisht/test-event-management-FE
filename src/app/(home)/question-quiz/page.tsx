@@ -1,4 +1,5 @@
 "use client";
+import { userQuestion } from "@/utils/api/endPoints/userScore";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef, ChangeEvent } from "react";
@@ -12,6 +13,7 @@ const QuestionQuiz: React.FC = () => {
   const [pageIndex, setPageIndex] = useState(0);
   const [answered, setAnswered] = useState<any>({});
   const [switchCount, setSwitchCount] = useState(0);
+  const [questionId , setQuestion] = useState<any>(2);
 
   const data = {
     totalDuration: 5, // in minutes
@@ -77,6 +79,22 @@ const QuestionQuiz: React.FC = () => {
     totalMarks: 25,
     passingMarks: 15,
   };
+
+  useEffect (()=>{
+    getUserQuestion();
+  },[])
+
+  const getUserQuestion = async()  =>{
+    try {
+      
+      const response = await userQuestion(questionId);
+      if(response.success){
+        console.log(response.data,'=========')
+      }
+    } catch (error) {
+      
+    }
+  }
 
   const getTimeRemaining = (e: Date) => {
     const total = Date.parse(e.toString()) - Date.parse(new Date().toString());
@@ -158,31 +176,41 @@ const QuestionQuiz: React.FC = () => {
 
   // useEffect(() => {
   //   let lastFocusTime = Date.now();
-
-  //   const handleVisibilityChange = () => {
-  //     if (document.hidden) {
-  //       checkAndIncrementSwitch();
-  //     }
-  //   };
-
-  //   const handleFocus = () => {
-  //     checkAndIncrementSwitch();
-  //   };
+  //   let isHidden = false;
 
   //   const checkAndIncrementSwitch = () => {
   //     const now = Date.now();
-  //     if (now - lastFocusTime > 300) { // 300ms threshold to prevent false positives
+  //     if (now - lastFocusTime > 300) { 
   //       setSwitchCount((prevCount) => {
   //         const newCount = prevCount + 1;
+  //         console.log(`Switch count: ${newCount}`); 
+  //         if (newCount <= data.maxTabSwitchAttempts) {
+  //           alert(`Warning: You have switched tabs/windows ${newCount} time(s). Maximum allowed: ${data.maxTabSwitchAttempts}`);
+  //         }
   //         if (newCount >= data.maxTabSwitchAttempts) {
   //           handleSubmitQuiz();
-  //           router.push("/")
-  //           alert("You have switched tabs/windows too many times. The quiz will be submitted automatically.");
+  //           alert("You have switched tabs/windows too many times. The quiz has been submitted automatically.");
   //         }
   //         return newCount;
   //       });
   //     }
   //     lastFocusTime = now;
+  //   };
+
+  //   const handleVisibilityChange = () => {
+  //     if (document.hidden && !isHidden) {
+  //       isHidden = true;
+  //       checkAndIncrementSwitch();
+  //     } else if (!document.hidden && isHidden) {
+  //       isHidden = false;
+  //     }
+  //   };
+
+  //   const handleFocus = () => {
+  //     if (!document.hidden && isHidden) {
+  //       isHidden = false;
+  //       checkAndIncrementSwitch();
+  //     }
   //   };
 
   //   document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -192,7 +220,10 @@ const QuestionQuiz: React.FC = () => {
   //     document.removeEventListener('visibilitychange', handleVisibilityChange);
   //     window.removeEventListener('focus', handleFocus);
   //   };
-  // }, [router]);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [data.maxTabSwitchAttempts, handleSubmitQuiz]);
+
+
 
   const quiz = data.questions[pageIndex];
   const next = pageIndex < data.questions.length - 1;

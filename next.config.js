@@ -18,8 +18,8 @@ const nextConfig = (phase) => {
     },
     env: {
       NEXT_PUBLIC_API_URL: isDevelopment
-        ? "/"
-        : "/",
+        ? "http://4.186.57.96/"
+        : "http://4.186.57.96/",
 
       NEXT_PUBLIC_ENV: isDevelopment
         ? "development"

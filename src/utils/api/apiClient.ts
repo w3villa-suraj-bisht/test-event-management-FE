@@ -56,9 +56,9 @@ const createApiClient = (baseURL: string, token?: string): AxiosInstance => {
 
 if (typeof window !== 'undefined') {
   const userToken = localStorage.getItem('token') || undefined;
-  apiClient = createApiClient(process.env.NEXT_PUBLIC_API_URL || '/', userToken);
+  apiClient = createApiClient(process.env.NEXT_PUBLIC_API_URL || 'http://4.186.57.96/', userToken);
 } else {
-  apiClient = createApiClient(process.env.NEXT_PUBLIC_API_URL || '/');
+  apiClient = createApiClient(process.env.NEXT_PUBLIC_API_URL || 'http://4.186.57.96/');
 }
 
 export default apiClient;
