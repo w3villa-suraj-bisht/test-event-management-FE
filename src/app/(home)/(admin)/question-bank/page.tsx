@@ -24,8 +24,8 @@ const QuestionBank = () => {
                         <Table className="tableStyle">
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>question</TableHead>
-                                    <TableHead>category</TableHead>
+                                    <TableHead>Question</TableHead>
+                                    <TableHead>Category</TableHead>
                                     <TableHead className="w-[150px] text-center">Length</TableHead>
                                     <TableHead className="w-[150px] text-center">Action</TableHead>
                                 </TableRow>
